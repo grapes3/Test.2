@@ -1,2 +1,89 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+let p1 = 0;
+let p2 = 0;
+let p3 = 0;
+let p4 = 0;
+let p5 = 0;
+let p6 = 0;
+let rate = 0.025;
+
+function setup() {
+  createCanvas(500, 500);
+}
+
+function draw() {
+  background(200);
+  
+  text("Ian Huang",230,50)
+  
+  fill("red");
+  triangle(0,100,0,0,100,100);
+  fill("green");
+  quad(100,100,200,100,200,200,100,200);
+  
+  if(p3>=0&&p3<3.1){
+  p1=p1+rate;
+  p2=p2-rate;
+  p3=p3+rate;
+  fill("blue");
+  arc(250,400,200,200,p1,p2,CHORD);
+  fill("red");
+  arc(250,400,200,200,p2,p1,CHORD);  
+  } 
+  if(p3>=3.1&&p3<6.22) {
+  p1=p1-rate;
+  p2=p2+rate;
+  p3=p3+rate;
+  fill("red");
+  arc(250,400,200,200,p2,p1,CHORD);
+  fill("blue");
+  arc(250,400,200,200,p1,p2,CHORD);
+  }
+  if(p3>=6.22&&p3<9.3){
+  p1=p1+rate;
+  p2=p2-rate;
+  p3=p3+rate;
+  fill("blue");
+  arc(250,400,200,200,p1,p2,CHORD);
+  fill("red");
+  arc(250,400,200,200,p2,p1,CHORD);  
+  }
+  if(p3>=9.3&&p3<12.56) {
+  p1=p1-rate;
+  p2=p2+rate;
+  p3=p3+rate;
+  fill("red");
+  arc(250,400,200,200,p2,p1,CHORD);
+  fill("blue");
+  arc(250,400,200,200,p1,p2,CHORD);
+  }
+  if(p3>=12.31){
+  p1=0;
+  p2=0;  
+  p3=0;
+  }
+  
+  if(p6>=0&&p6<3.12){
+  p4=p4+rate;
+  p5=p5-rate;
+  p6=p6+rate;
+  fill("blue");
+  arc(350,100,100,100,p4,p5);
+  } 
+  if(p6>=3.12&&p6<6.28) {
+  p4=p4-rate;
+  p5=p5+rate;
+  p6=p6+rate;
+  fill("blue");
+  arc(350,100,100,100,p4,p5);
+  }
+  if(p6>=6.25){
+  p4=0;
+  p5=0;  
+  p6=0;
+  }
+  
+  noStroke();
+}
+
